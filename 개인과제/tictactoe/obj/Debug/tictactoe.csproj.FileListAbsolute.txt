@@ -1,0 +1,8 @@
+C:\Users\KGA\Documents\Programming\개인과제\tictactoe\bin\Debug\tictactoe.exe.config
+C:\Users\KGA\Documents\Programming\개인과제\tictactoe\bin\Debug\tictactoe.exe
+C:\Users\KGA\Documents\Programming\개인과제\tictactoe\bin\Debug\tictactoe.pdb
+C:\Users\KGA\Documents\Programming\개인과제\tictactoe\obj\Debug\tictactoe.csproj.AssemblyReference.cache
+C:\Users\KGA\Documents\Programming\개인과제\tictactoe\obj\Debug\tictactoe.csproj.SuggestedBindingRedirects.cache
+C:\Users\KGA\Documents\Programming\개인과제\tictactoe\obj\Debug\tictactoe.csproj.CoreCompileInputs.cache
+C:\Users\KGA\Documents\Programming\개인과제\tictactoe\obj\Debug\tictactoe.exe
+C:\Users\KGA\Documents\Programming\개인과제\tictactoe\obj\Debug\tictactoe.pdb
