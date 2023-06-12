@@ -10,7 +10,10 @@ namespace _20230612_hw
     {
         static void Main(string[] args)
         {
+            Tictactoe myTictactoe = new Tictactoe();
 
+            
+            myTictactoe.Play();
 
         }
     }
