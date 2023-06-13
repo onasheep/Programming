@@ -1,0 +1,8 @@
+C:\Users\KGA\Documents\Programming\C#\_20230613\obj\Debug\_20230613.csproj.AssemblyReference.cache
+C:\Users\KGA\Documents\Programming\C#\_20230613\obj\Debug\_20230613.csproj.SuggestedBindingRedirects.cache
+C:\Users\KGA\Documents\Programming\C#\_20230613\obj\Debug\_20230613.csproj.CoreCompileInputs.cache
+C:\Users\KGA\Documents\Programming\C#\_20230613\bin\Debug\_20230613.exe.config
+C:\Users\KGA\Documents\Programming\C#\_20230613\bin\Debug\_20230613.exe
+C:\Users\KGA\Documents\Programming\C#\_20230613\bin\Debug\_20230613.pdb
+C:\Users\KGA\Documents\Programming\C#\_20230613\obj\Debug\_20230613.exe
+C:\Users\KGA\Documents\Programming\C#\_20230613\obj\Debug\_20230613.pdb

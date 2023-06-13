@@ -10,6 +10,15 @@ namespace _20230613
     {
         static void Main(string[] args)
         {
+            CoinGame myCoinGame = new CoinGame();
+
+
+            myCoinGame.Play();
+            
+               
+
+
+            
 
         }
     }

@@ -1,0 +1,3 @@
+﻿  main.c
+C:\Users\KGA\Documents\Programming\C_basic\20230613_Cbasic\main.c(10,8): error C2371: 'add': 재정의. 기본 형식이 다릅니다.
+C:\Users\KGA\Documents\Programming\C_basic\20230613_Cbasic\main.c(5,5): message : 'add' 선언을 참조하십시오.
