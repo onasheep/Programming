@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{84DC9865-EB5B-48CE-8391-F0F96995B8D5}</ProjectGuid>
+    <ProjectGuid>{F4120BC9-76B9-4068-9DE2-A2F5C1CED277}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>tictactoe</RootNamespace>
-    <AssemblyName>tictactoe</AssemblyName>
+    <RootNamespace>_20230613</RootNamespace>
+    <AssemblyName>_20230613</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>

@@ -4,19 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace tictactoe
+namespace _20230613
 {
-    public class Program
+    internal class Program
     {
         static void Main(string[] args)
         {
-            DrawLine();
-        }
 
-
-        static void DrawLine()
-        {
-            Console.WriteLine("\t");
         }
     }
 }

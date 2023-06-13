@@ -6,3 +6,11 @@ C:\Users\홍성제\Desktop\GitDesk\Programming\개인과제\20230612_hw\obj\Debu
 C:\Users\홍성제\Desktop\GitDesk\Programming\개인과제\20230612_hw\obj\Debug\20230612_hw.csproj.CoreCompileInputs.cache
 C:\Users\홍성제\Desktop\GitDesk\Programming\개인과제\20230612_hw\obj\Debug\20230612_hw.exe
 C:\Users\홍성제\Desktop\GitDesk\Programming\개인과제\20230612_hw\obj\Debug\20230612_hw.pdb
+C:\Users\KGA\Documents\Programming\개인과제\20230612_hw\bin\Debug\20230612_hw.exe.config
+C:\Users\KGA\Documents\Programming\개인과제\20230612_hw\bin\Debug\20230612_hw.exe
+C:\Users\KGA\Documents\Programming\개인과제\20230612_hw\bin\Debug\20230612_hw.pdb
+C:\Users\KGA\Documents\Programming\개인과제\20230612_hw\obj\Debug\20230612_hw.csproj.AssemblyReference.cache
+C:\Users\KGA\Documents\Programming\개인과제\20230612_hw\obj\Debug\20230612_hw.csproj.SuggestedBindingRedirects.cache
+C:\Users\KGA\Documents\Programming\개인과제\20230612_hw\obj\Debug\20230612_hw.csproj.CoreCompileInputs.cache
+C:\Users\KGA\Documents\Programming\개인과제\20230612_hw\obj\Debug\20230612_hw.exe
+C:\Users\KGA\Documents\Programming\개인과제\20230612_hw\obj\Debug\20230612_hw.pdb
