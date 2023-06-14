@@ -11,13 +11,18 @@ namespace _20230613
     public class CoinGame
     {
         private char[,] starArr = new char[,] { };
-        int move = 0;
+
+        int size = 0;
+
         int curPRow = 0;
         int curPColumn = 0;
         int futPRow = 0;
         int futPColumn = 0;
+        
+        int move = 0;
         int score = 0;
         int maxScore = 100;
+
 
         // 초기화
         // starArr 2차원 배열에  *을 넣어준다.
@@ -88,7 +93,7 @@ namespace _20230613
         }
 
         //  키 입력을 받고, 입력받은 키가 키보드 방향키에 해당하는 경우 
-        public void PlayerMove()
+        public void MovePlayer()
         {
             ConsoleKeyInfo input;
             input = Console.ReadKey(true);
@@ -150,43 +155,70 @@ namespace _20230613
         }
 
 
+        // Swap() 함수의 매게변수를 ref 형태로 하여 함수 내에서 변수 스왑이 외부에도 적용될 수 있도록 함.
+        // temp 형태에 이동 할 좌표와 해당 좌표의 표시를 담고, starArr 배열의 이동 할 좌표 표시로 변경하고
+        // 현재 좌표의 표시를 temp에 담아두었던 이동 할 좌표의 표시로 바꾼다. 
+        // 현재 좌표값을 temp에 담아두었던 이동 할 좌표값을 넣어준다. 
+        public void Swap(ref int pColumn, ref int pRow, ref int futPColumn, ref int futPRow)
+        {
+            int tempCol = 0;
+            int tempRow = 0;
+            char temp = ' ';
+
+            tempCol = futPColumn;
+            tempRow = futPRow;
+            temp = starArr[futPColumn, futPRow];
+
+            starArr[futPColumn, futPRow] = starArr[pColumn, pRow];
+            starArr[pColumn, pRow] = temp;
+
+            pColumn = tempCol;
+            pRow = tempRow;
+
+        }
+
 
         // 실제 게임 실행 함수
         public void Play()
         {
             Console.WriteLine("배열의 사이즈를 입력하세요.");
             
-            // goto문을 사용해서 재입력을 하도록 만듬. goto문은 아래도 내려가는 방식으로만 사용하라고 하셨는데 한번 물어볼것!
-            re_Input:
-            string s = Console.ReadLine();
-            if (int.TryParse(s, out int size))
+            // goto 사용하지 말기. 아예 없다고 생각하자
+
+            while(true)
             {
-                
-                if (size >= 5 && size <= 15)
+                string s = Console.ReadLine();
+                if (int.TryParse(s, out int num))
                 {
-                    Init(size);
-                    DrawLine();
-                    Console.WriteLine("코인을 모아서 100점을 획득하세요!");
+                    size = num;
+
+                    if (size >= 5 && size <= 15)
+                    {
+                        Init(size);
+                        DrawLine();
+                        Console.WriteLine("코인을 모아서 100점을 획득하세요!");
+                        break;
+
+                    }
+                    else
+                    {
+                        Console.WriteLine("잘못된 입력값을 누르셨습니다. 다시 입력해 주세요.");
+                    }
 
                 }
-                else
-                {
-                    Console.WriteLine("잘못된 입력값을 누르셨습니다. 다시 입력해 주세요.");
-                    goto re_Input;
-                }
-
             }
+            
 
 
             while (true)
             {
 
-                // PlayerMove()가 실행되기 전 미래 플레이어 위치값 즉, futPRow와 futPColumn 값에 현재 위치값인 curPRow와 curPColumn을 넣어준다.
+                // MovePlayer()가 실행되기 전 미래 플레이어 위치값 즉, futPRow와 futPColumn 값에 현재 위치값인 curPRow와 curPColumn을 넣어준다.
                 // while문을 실행하면서 플레이어가 이동을 하더라도, 계속해서 현재값을 미래 이동 값에 담을 수 있게 한다.
                 futPRow = curPRow;
                 futPColumn = curPColumn;
 
-                PlayerMove();
+                MovePlayer();
 
                 CoinSpawn(size);
 
@@ -205,26 +237,6 @@ namespace _20230613
 
 
         }
-        // Swap() 함수의 매게변수를 ref 형태로 하여 함수 내에서 변수 스왑이 외부에도 적용될 수 있도록 함.
-        // temp 형태에 이동 할 좌표와 해당 좌표의 표시를 담고, starArr 배열의 이동 할 좌표 표시로 변경하고
-        // 현재 좌표의 표시를 temp에 담아두었던 이동 할 좌표의 표시로 바꾼다. 
-        // 현재 좌표값을 temp에 담아두었던 이동 할 좌표값을 넣어준다. 
-        public void Swap(ref int pColumn , ref int pRow, ref int futPColumn, ref int futPRow)
-        {
-            int tempCol = 0;
-            int tempRow = 0;
-            char temp = ' ';
-
-            tempCol = futPColumn;
-            tempRow = futPRow;
-            temp = starArr[futPColumn, futPRow];
-
-            starArr[futPColumn, futPRow] = starArr[pColumn, pRow];
-            starArr[pColumn, pRow] = temp;
-
-            pColumn = tempCol;
-            pRow = tempRow;
-
-        }
+       
     }
 }
