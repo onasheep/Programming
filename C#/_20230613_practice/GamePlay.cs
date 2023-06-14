@@ -27,6 +27,7 @@ namespace _20230613_practice
             {
                 if(itemList.Count < 3)
                 {
+                    Console.Clear();
                     Console.WriteLine("준비된 아이템을 모두 소진하였습니다.");
                     Console.WriteLine("영업 종료하겠습니다.");
                     return;
@@ -34,11 +35,13 @@ namespace _20230613_practice
 
                 if(player.coin <= 0)
                 {
+                    Console.Clear();
                     Console.WriteLine("가지고 있는 코인을 모두 소모하셨습니다.");
                     Console.WriteLine("영업 종료하겠습니다.");
                     return;
 
                 }
+
 
                 Console.WriteLine("현재 코인 : {0}", player.coin);
                 Console.WriteLine();
@@ -52,10 +55,21 @@ namespace _20230613_practice
                 Console.WriteLine();
                 Console.WriteLine("원하시는 아이템의 숫자를 눌러 주세요. (1 ~ 3)");
 
+                // 상점에 나타난 아이템의 가격보다 소지금이 작은 경우 게임 종료
+
+                if (player.coin < GetItemCost(showedItem))
+                {
+                    Console.Clear();
+                    Console.WriteLine("이런, 소지금이 부족하신것 같습니다.");
+                    Console.WriteLine("물건을 팔 수 없을것 같네요.");
+                    Console.WriteLine("영업 종료하겠습니다.");
+                    return;
+                }
+
 
                 // true if 문으로 전부를 묶고 else 문으로 예외 처리를 했었는데
                 // false 문으로 예외 처리를 하고, 일반문에서 처리 
-                if(int.TryParse(Console.ReadLine(), out int num) == false)
+                if (int.TryParse(Console.ReadLine(), out int num) == false)
                 {
                     Console.Clear();
                     Console.WriteLine("잘못된 입력입니다.");
@@ -69,6 +83,8 @@ namespace _20230613_practice
                     Console.Clear();
                     continue;
                 }
+
+          
 
                 Console.Clear();
                 int selNum = num - 1; // 인덱스 접근하기 때문에 -1 을 해준다.
@@ -146,6 +162,22 @@ namespace _20230613_practice
 
 
         }
+
+        public int GetItemCost(List<Item> showedItem)
+        {
+            int minCost = 1000;
+
+            for(int i = 0; i < showedItem.Count;i++)
+            {
+                if(minCost > showedItem[i].itemPrice)
+                {
+                    minCost = showedItem[i].itemPrice;
+                }
+            }
+            return minCost;
+        }
+
+
         // 인벤토리 목록 출력 함수
         public void Print_Invetory(List<Item> inventory)
         {
