@@ -9,7 +9,7 @@ namespace _20230614_practice
 {
     public class GamePlay
     {
-
+   
 
         public void Play(Shop itemShop, List<Item> itemList, List<Item> inventory, Player player)
         {

@@ -10,7 +10,7 @@ namespace _20230613
 {
     public class CoinGame
     {
-        private char[,] starArr = new char[,] { };
+        private char[,] starArr;
 
         int size = 0;
 
