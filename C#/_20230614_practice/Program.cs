@@ -16,7 +16,7 @@ namespace _20230614_practice
             Player player = new Player();
             List<Item> inventory = new List<Item>();
 
-            gamePlay.Paly(itemShop, itemList, inventory, player);
+            gamePlay.Play(itemShop, itemList, inventory, player);
 
         }
     }

@@ -33,14 +33,11 @@ namespace _20230614_practice
             // itemList에 아이템 추가
             itemList.Add(redPortion);
             itemList.Add(redPortion);
-            itemList.Add(redPortion);
-            itemList.Add(bluePortion);
             itemList.Add(bluePortion);
             itemList.Add(bluePortion);
             itemList.Add(sword);
             itemList.Add(shield);
             itemList.Add(armor);
-            itemList.Add(arrow);
             itemList.Add(arrow);
             itemList.Add(arrow);
             itemList.Add(arrow);
@@ -90,6 +87,8 @@ namespace _20230614_practice
             Console.WriteLine("[{0}] 아이템 이름 : {1} | 아이템 가격 : {2}", itemCount,item.itemName, item.itemPrice);
         }
 
+
+        // 플레이어가 선택한 아이템을 아이템 리스트에서 제거 
         public void DeleteItem(List<Item> itemList, Item selectedItem)
         {
             for(int i = 0; i < itemList.Count; i++)

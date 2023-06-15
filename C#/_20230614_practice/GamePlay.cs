@@ -11,7 +11,7 @@ namespace _20230614_practice
     {
 
 
-        public void Paly(Shop itemShop, List<Item> itemList, List<Item> inventory, Player player)
+        public void Play(Shop itemShop, List<Item> itemList, List<Item> inventory, Player player)
         {
             // 시작화면 그리기
             Console.WriteLine("게임을 시작하려면 아무 키나 누르세요");
@@ -54,17 +54,18 @@ namespace _20230614_practice
                 Console.WriteLine("3가지 아이템을 보여드립니다.");
                 Console.WriteLine();
                 Console.WriteLine("원하시는 아이템의 숫자를 눌러 주세요. (1 ~ 3)");
+                Console.WriteLine();
 
                 // 상점에 나타난 아이템의 가격보다 소지금이 작은 경우 게임 종료
-
                 if (player.coin < GetItemCost(showedItem))
                 {
-                    Console.Clear();
                     Console.WriteLine("이런, 소지금이 부족하신것 같습니다.");
                     Console.WriteLine("물건을 팔 수 없을것 같네요.");
                     Console.WriteLine("영업 종료하겠습니다.");
+                    Console.WriteLine();
                     return;
                 }
+
 
 
                 // true if 문으로 전부를 묶고 else 문으로 예외 처리를 했었는데
@@ -157,6 +158,9 @@ namespace _20230614_practice
                 //    Console.Clear();
                 //    Console.WriteLine("잘못된 입력입니다.");
                 //}
+
+
+
 
             }
 
