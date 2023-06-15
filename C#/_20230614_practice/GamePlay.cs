@@ -5,7 +5,7 @@ using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _20230613_practice
+namespace _20230614_practice
 {
     public class GamePlay
     {
