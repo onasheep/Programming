@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{17060508-2D20-43B0-88E3-FFFBA53C7832}</ProjectGuid>
+    <ProjectGuid>{D094CEAF-DC83-4608-B52A-E07D1EE02C47}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>_20230615_practice</RootNamespace>
-    <AssemblyName>_20230615_practice</AssemblyName>
+    <RootNamespace>_20230616</RootNamespace>
+    <AssemblyName>_20230616</AssemblyName>
     <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,12 +43,11 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="field.cs" />
     <Compile Include="GamePlay.cs" />
     <Compile Include="InputManager.cs" />
+    <Compile Include="Field.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Stone.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
