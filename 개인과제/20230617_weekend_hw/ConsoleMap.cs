@@ -6,10 +6,17 @@ using System.Threading.Tasks;
 
 namespace _20230617_weekend_hw
 {
-    public class Player
+    public class ConsoleMap
     {
-        public int PPosCol { get; private set; } = 10;
-        public int PPosRow { get; private set; } = 20;
+        public void Init()
+        {
+            
+        }
+
+        public void DrawMap()
+        {
+
+        }
 
     }
 }
