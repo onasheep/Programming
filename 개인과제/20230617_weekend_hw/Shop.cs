@@ -89,12 +89,7 @@ namespace _20230617_weekend_hw
             }
 
 
-
-           
-
-
-
-        }
+        }       // Play()
 
         public void GetRandomItem()
         {
@@ -111,7 +106,7 @@ namespace _20230617_weekend_hw
 
 
 
-        }
+        }       // GetRandomItem()
         public void DrawField()
         {
             Console.WriteLine("소지금 : {0}", myGold);
@@ -143,7 +138,7 @@ namespace _20230617_weekend_hw
 
 
 
-        }
+        }       // DrawField()
 
         public void DrawMenu()
         {
@@ -204,6 +199,6 @@ namespace _20230617_weekend_hw
                 }
 
             }
-        }
+        }       // Input()
     }
 }

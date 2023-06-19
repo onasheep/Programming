@@ -166,7 +166,7 @@ namespace _20230617_weekend_hw
             
 
 
-        }
+        }       // Input()
 
         public void PrintMoney()
         {

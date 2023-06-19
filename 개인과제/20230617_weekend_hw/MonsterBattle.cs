@@ -27,7 +27,7 @@ namespace _20230617_weekend_hw
         {
             monsterName = "훈련용 골렘";
             monsterHp = 100;
-            monsterAtk = 30;
+            monsterAtk = 45;
 
             playerName = "플레이어";
             playerHp = 200;
@@ -35,7 +35,7 @@ namespace _20230617_weekend_hw
             playerHeal = 20;
         }
 
-        public void Play()
+        public  void Play()
         {
             Init();
 
@@ -80,7 +80,7 @@ namespace _20230617_weekend_hw
 
 
 
-        }
+        }       // Play()
 
 
 
@@ -98,7 +98,7 @@ namespace _20230617_weekend_hw
 
             Console.WriteLine("──────────────────────────────────────────────────────────────────");
 
-        }
+        }       // DrawField()
 
 
         public void AutoBattle()
@@ -147,11 +147,11 @@ namespace _20230617_weekend_hw
                     break;
             }
 
-         
 
 
 
-        }
+
+        }       // AutoBattle()
 
 
 
