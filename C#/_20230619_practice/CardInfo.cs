@@ -10,14 +10,13 @@ namespace _20230619_practice
     {
 
 
-        private char[] cardMark = { '♠', '◆', '♥',  '♣' };
-        public char mark;
-        public int cardNum = default;
+        public int mark = default;
+        public int num = default;
 
         public void Init( int markIndex,int cardNum)
         {
-            this.cardNum = cardNum;
-            this.mark = cardMark[markIndex];
+            this.num = cardNum;
+            this.mark = markIndex;
         }
     }
 }

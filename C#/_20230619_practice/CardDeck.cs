@@ -12,7 +12,6 @@ namespace _20230619_practice
         public void InitCardDeck(List<CardInfo> cardDeck)
         {
 
-
             for(int markIndex = 0; markIndex < 4; markIndex++)
             {
                 for (int NumIndex = 2; NumIndex <= 14; NumIndex++)
