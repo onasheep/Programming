@@ -4,24 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _20230620_practice
+namespace _20230621_practice
 {
     public class Program
     {
-
-
-
         static void Main(string[] args)
         {
-
-            GamePlay gp = new GamePlay();
-
-
-            gp.Play();
+            GamePlay gamePlay = new GamePlay();
 
 
-
-
+            gamePlay.Play();
         }
 
 

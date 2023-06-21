@@ -16,9 +16,9 @@ namespace _20230620_practice
         int rand_Y;
         int rand_X;
 
-        public static int[] portal_Y = new int[4]{ 6, 1, 11, 6 };
+        public static int[] portal_Y = new int[4]{ 1, 6, 11, 6 };
 
-        public static int[] portal_X = new int[4] { 1, 6, 6, 11 };
+        public static int[] portal_X = new int[4] {6, 11, 6,  1 };
        
 
         public virtual void Init()
@@ -42,21 +42,14 @@ namespace _20230620_practice
             }
 
 
-            Random rand = new Random();
-
-
-
-
-
-
             // 장애물 넣기
-
+            Random rand = new Random();
 
 
             for (int i = 0; i < 10; i++)
             {
-                rand_Y = rand.Next(2, BOARD_Y - 2);
-                rand_X = rand.Next(2, BOARD_X - 2);
+                rand_Y = rand.Next(4, BOARD_Y - 4);
+                rand_X = rand.Next(4, BOARD_X - 4);
                 board[rand_X, rand_Y] = "▣";
 
             }
@@ -65,12 +58,10 @@ namespace _20230620_practice
 
 
 
-            //int portal_Pos = rand.Next(0, 4);
 
+          
 
-            //board[portal_Y[portal_Pos], portal_X[portal_Pos]] = "♨";
-
-            board[6,11]= "♨";
+            //board[6,11]= "♨";
 
         }
 

@@ -8,6 +8,7 @@ namespace _20230620_practice
 {
     public class Map : MapMaker
     {
+        
         public override void Init()
         {
             base.Init();
