@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Net;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 
 namespace _20230621_practice
@@ -17,7 +18,6 @@ namespace _20230621_practice
         int enemyCount = 0;
         int enemyMaxCount = 5;
 
-        List<Enemy> enemyList;
 
         public void Play()
         {
@@ -31,14 +31,14 @@ namespace _20230621_practice
             mapMaker.Init();
 
             string[,] myMap = mapMaker.board;
-            enemyList = new List<Enemy>();
+            List<Enemy> enemyList = new List<Enemy>();
 
 
             myMap[player_Y, player_X] = "♡";
 
-        
 
-            while(true)
+
+            while (true)
             {
 
 
@@ -65,13 +65,15 @@ namespace _20230621_practice
                 Input(myMap,ref score);
 
 
-
+                #region
                 // 적 랜덤 생성 후 , 리스트에 담기
 
                 // 오래 고민했던 문제 
                 // 리스트에 있는 모든 좌표 값들이 같고, 마지막에 생성되는 적만 움직이는 문제가 잇었음
                 // Enemy Class 초기화를 상단에서 한번하고 그대로 계속 사용하고 있어서 문제가 발생한것이였음;
                 // 리스트에 넣기전에 new를 통해서 새로 만들어주니 문제없이 작동했다.
+                #endregion
+
                 while (enemyCount < enemyMaxCount)
                 {
                     myEnenmy = new Enemy();
@@ -79,7 +81,7 @@ namespace _20230621_practice
                     int enemy_X = rand.Next(2, myMap.GetLength(1) - 2);
                     myEnenmy.Init("◎", enemy_Y, enemy_X);
                     enemyList.Add(myEnenmy);
-                    
+
                     if (myMap[enemyList[enemyCount].Enemy_Y, enemyList[enemyCount].Enemy_X] == "□" && enemy_Y != player_Y && enemy_X != player_X)
                     {                      
                         myMap[enemyList[enemyCount].Enemy_Y, enemyList[enemyCount].Enemy_X] = enemyList[enemyCount].Mark;
@@ -95,19 +97,23 @@ namespace _20230621_practice
 
                 // 적이 플레이어 쫒아가기
 
+                // 루프 후 인덱스 초과 문제
 
                 for (int i = 0; i < enemyCount; i++)
                 {
                     enemyList[i].ComparePos(myMap, player_Y, player_X);
+
                     if (enemyList[i].Enemy_X == player_X && enemyList[i].Enemy_Y == player_Y)
                     {
                         myMap[enemyList[i].Enemy_Y, enemyList[i].Enemy_X] = "□";
                         myMap[player_Y, player_X] = "◎";
 
+                        Console.WriteLine("게임을 종료합니다...");
+                        Thread.Sleep(1000);
+                        Console.Clear();
                         return;
                     }
                 }
-
 
 
                 Console.SetCursorPosition(0, 0);

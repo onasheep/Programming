@@ -4,21 +4,16 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace _20230621_practice
+namespace _20230622_practice
 {
     public class Program
     {
         static void Main(string[] args)
         {
-            GamePlay gamePlay = new GamePlay();
+            Pokemon game = new Pokemon();
 
-            while(true)
-            {
-                gamePlay.Play();
+            game.Play();
 
-            }
         }
-
-
     }
 }

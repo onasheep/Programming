@@ -25,149 +25,152 @@ namespace _20230621_practice
         public void ComparePos(string[,] myMap, int player_Y, int player_X)
         {
             #region LEGACY :
-            //Random rand = new Random();
+            Random rand = new Random();
 
-            //int yDiff = player_Y - this.Enemy_Y;
-            //int xDiff = player_X - this.Enemy_X;
-            //if (yDiff > 0)
-            //{
-            //    if ( myMap[this.Enemy_Y + 1, this.Enemy_X] != "▣" )
-            //    {
-            //        myMap[this.Enemy_Y, this.Enemy_X] = "□";                   
-            //        this.Enemy_Y += 1;
-            //    }
-            //    else if(myMap[this.Enemy_Y + 1, this.Enemy_X] == "▣" )
-            //    {
-            //        int dir = rand.Next(0, 1);
-            //        switch(dir)
-            //        {
-            //            case 0:
-            //                myMap[this.Enemy_Y, this.Enemy_X] = "□";
-            //                this.Enemy_X += 1;
-            //                break;
-            //            case 1:
-            //                myMap[this.Enemy_Y, this.Enemy_X] = "□";
-            //                this.Enemy_X -= 1;
-            //                break;
-            //        }
-            //    }
-            //    else if (myMap[this.Enemy_Y - 1, this.Enemy_X] == "◎")
-            //    {
+            int yDiff = player_Y - this.Enemy_Y;
+            int xDiff = player_X - this.Enemy_X;
+            if (yDiff > 0)
+            {
+                if (myMap[this.Enemy_Y + 1, this.Enemy_X] != "▣")
+                {
+                    myMap[this.Enemy_Y, this.Enemy_X] = "□";
+                    this.Enemy_Y += 1;
+                }
+                else if (myMap[this.Enemy_Y + 1, this.Enemy_X] == "▣")
+                {
+                    int dir = rand.Next(0, 1);
+                    switch (dir)
+                    {
+                        case 0:
+                            myMap[this.Enemy_Y, this.Enemy_X] = "□";
+                            this.Enemy_X += 1;
+                            break;
+                        case 1:
+                            myMap[this.Enemy_Y, this.Enemy_X] = "□";
+                            this.Enemy_X -= 1;
+                            break;
+                    }
+                }
+                else if (myMap[this.Enemy_Y - 1, this.Enemy_X] == "◎")
+                {
 
-            //    }
-            //    myMap[this.Enemy_Y, this.Enemy_X] = this.Mark;
+                }
+                myMap[this.Enemy_Y, this.Enemy_X] = this.Mark;
 
-            //}
-            //else if (yDiff < 0)
-            //{
-            //    if ( myMap[this.Enemy_Y - 1, this.Enemy_X] != "▣" )
-            //    {
-            //        myMap[this.Enemy_Y, this.Enemy_X] = "□";
+            }
+            else if (yDiff < 0)
+            {
+                if (myMap[this.Enemy_Y - 1, this.Enemy_X] != "▣")
+                {
+                    myMap[this.Enemy_Y, this.Enemy_X] = "□";
 
-            //        this.Enemy_Y -= 1;
-            //    }
-            //    else if(myMap[this.Enemy_Y - 1, this.Enemy_X] == "▣")
-            //    {
-            //        int dir = rand.Next(0, 1);
-            //        switch (dir)
-            //        {
-            //            case 0:
-            //                myMap[this.Enemy_Y, this.Enemy_X] = "□";
-            //                this.Enemy_X += 1;
-            //                break;
-            //            case 1:
-            //                myMap[this.Enemy_Y, this.Enemy_X] = "□";
-            //                this.Enemy_X -= 1;
-            //                break;
-            //        }
-            //    }
-            //    else if(myMap[this.Enemy_Y - 1, this.Enemy_X] == "◎")
-            //    {
+                    this.Enemy_Y -= 1;
+                }
+                else if (myMap[this.Enemy_Y - 1, this.Enemy_X] == "▣")
+                {
+                    int dir = rand.Next(0, 1);
+                    switch (dir)
+                    {
+                        case 0:
+                            myMap[this.Enemy_Y, this.Enemy_X] = "□";
+                            this.Enemy_X += 1;
+                            break;
+                        case 1:
+                            myMap[this.Enemy_Y, this.Enemy_X] = "□";
+                            this.Enemy_X -= 1;
+                            break;
+                    }
+                }
+                else if (myMap[this.Enemy_Y - 1, this.Enemy_X] == "◎")
+                {
 
-            //    }
-            //    myMap[this.Enemy_Y, this.Enemy_X] = this.Mark;
+                }
+                myMap[this.Enemy_Y, this.Enemy_X] = this.Mark;
 
-            //}
-            //else if (xDiff > 0)
-            //{
-            //    if (myMap[this.Enemy_Y , this.Enemy_X + 1] != "▣")
-            //    {
+            }
+            else if (xDiff > 0)
+            {
+                if (myMap[this.Enemy_Y, this.Enemy_X + 1] != "▣")
+                {
 
-            //        myMap[this.Enemy_Y, this.Enemy_X] = "□";
-            //        this.Enemy_X += 1;
-            //    }
-            //    else if (myMap[this.Enemy_Y , this.Enemy_X + 1] == "▣")
-            //    {
-            //        int dir = rand.Next(0, 1);
-            //        switch (dir)
-            //        {
-            //            case 0:
-            //                myMap[this.Enemy_Y, this.Enemy_X] = "□";
-            //                this.Enemy_Y += 1;
-            //                break;
-            //            case 1:
-            //                myMap[this.Enemy_Y, this.Enemy_X] = "□";
-            //                this.Enemy_Y -= 1;
-            //                break;
-            //        }
-            //    }
-            //    else if (myMap[this.Enemy_Y, this.Enemy_X + 1] == "◎")
-            //    {
-
-            //    }
-
-
-
-            //    myMap[this.Enemy_Y, this.Enemy_X] = this.Mark;
-
-            //}
-            //else if (xDiff < 0)
-            //{
-
-            //    if (myMap[this.Enemy_Y, this.Enemy_X - 1] != "▣")
-            //    {
-
-            //        myMap[this.Enemy_Y, this.Enemy_X] = "□";
-            //        this.Enemy_X -= 1;
-            //    }
-            //    else if (myMap[this.Enemy_Y, this.Enemy_X - 1] == "▣")
-            //    {
-            //        int dir = rand.Next(0, 1);
-            //        switch (dir)
-            //        {
-            //            case 0:
-            //                myMap[this.Enemy_Y, this.Enemy_X] = "□";
-            //                this.Enemy_Y += 1;
-            //                break;
-            //            case 1:
-            //                myMap[this.Enemy_Y, this.Enemy_X] = "□";
-            //                this.Enemy_Y -= 1;
-            //                break;
-            //        }
-            //    }
-            //    else if (myMap[this.Enemy_Y, this.Enemy_X - 1] == "◎")
-            //    {
-
-            //    }
+                    myMap[this.Enemy_Y, this.Enemy_X] = "□";
+                    this.Enemy_X += 1;
+                }
+                else if (myMap[this.Enemy_Y, this.Enemy_X + 1] == "▣")
+                {
+                    int dir = rand.Next(0, 1);
+                    switch (dir)
+                    {
+                        case 0:
+                            myMap[this.Enemy_Y, this.Enemy_X] = "□";
+                            this.Enemy_Y += 1;
+                            break;
+                        case 1:
+                            myMap[this.Enemy_Y, this.Enemy_X] = "□";
+                            this.Enemy_Y -= 1;
+                            break;
+                    }
+                }
+                else if (myMap[this.Enemy_Y, this.Enemy_X + 1] == "◎")
+                {
+                    
+                }
 
 
-            //    myMap[this.Enemy_Y, this.Enemy_X] = this.Mark;
 
-            //}
+                myMap[this.Enemy_Y, this.Enemy_X] = this.Mark;
+
+            }
+            else if (xDiff < 0)
+            {
+
+                if (myMap[this.Enemy_Y, this.Enemy_X - 1] != "▣")
+                {
+
+                    myMap[this.Enemy_Y, this.Enemy_X] = "□";
+                    this.Enemy_X -= 1;
+                }
+                else if (myMap[this.Enemy_Y, this.Enemy_X - 1] == "▣")
+                {
+                    int dir = rand.Next(0, 1);
+                    switch (dir)
+                    {
+                        case 0:
+                            myMap[this.Enemy_Y, this.Enemy_X] = "□";
+                            this.Enemy_Y += 1;
+                            break;
+                        case 1:
+                            myMap[this.Enemy_Y, this.Enemy_X] = "□";
+                            this.Enemy_Y -= 1;
+                            break;
+                    }
+                }
+                else if (myMap[this.Enemy_Y, this.Enemy_X - 1] == "◎")
+                {
+
+                }
+
+
+                myMap[this.Enemy_Y, this.Enemy_X] = this.Mark;
+
+            }
             #endregion
 
-            ScanMovableTile(myMap, player_Y, player_X);
-
-            int movable_Y = ScanMovableTile(myMap, player_Y, player_X)[0, 0];
-            int movable_X = ScanMovableTile(myMap, player_Y, player_X)[0, 1];
-
-            myMap[this.Enemy_Y, this.Enemy_X] = "□";
-            myMap[movable_Y, movable_X] = "◎";
-            this.Enemy_Y = movable_Y;
-            this.Enemy_X = movable_X;
 
 
-            //Console.WriteLine("{0}{1}", movable_Y, movable_X);
+
+            // LEGACY 2:
+            //ScanMovableTile(myMap, player_Y, player_X);
+
+            //int movable_Y = ScanMovableTile(myMap, player_Y, player_X)[0, 0];
+            //int movable_X = ScanMovableTile(myMap, player_Y, player_X)[0, 1];
+
+            //myMap[this.Enemy_Y, this.Enemy_X] = "□";
+            //myMap[movable_Y, movable_X] = "◎";
+            //this.Enemy_Y = movable_Y;
+            //this.Enemy_X = movable_X;
+
+
 
         } // ComparePos()
 
@@ -175,49 +178,51 @@ namespace _20230621_practice
         {
             List<int[,]> movableList = new List<int[,]>();
             int dir = 1;
-            
 
-            if (myMap[Enemy_Y + dir, Enemy_X] == "□")
+            int[,] bestPos1 = new int[1, 2];
+            int[,] bestPos2 = new int[1, 2];
+            int[,] bestPos3 = new int[1, 2];
+            int[,] bestPos4 = new int[1, 2];
+
+
+
+            if (myMap[Enemy_Y + dir, this.Enemy_X] == "□")
             {
-                int[,] bestPos = new int[1, 2];
 
-                bestPos[0, 0] = Enemy_Y + dir;
-                bestPos[0, 1] = Enemy_X;
-                movableList.Add(bestPos);
+                bestPos1[0, 0] = this.Enemy_Y + dir;
+                bestPos1[0, 1] = this.Enemy_X;
+                movableList.Add(bestPos1);
 
             }
-            else if (myMap[Enemy_Y - dir, Enemy_X] == "□")
+            else if (myMap[Enemy_Y - dir, this.Enemy_X] == "□")
             {
-                int[,] bestPos = new int[1, 2];
 
-                bestPos[0, 0] = Enemy_Y - dir;
-                bestPos[0, 1] = Enemy_X;
-                movableList.Add(bestPos);
+                bestPos2[0, 0] = this.Enemy_Y - dir;
+                bestPos2[0, 1] = this.Enemy_X;
+                movableList.Add(bestPos2);
 
             }
-            else if (myMap[Enemy_Y, Enemy_X + dir] == "□")
+            else if (myMap[Enemy_Y, this.Enemy_X + dir] == "□")
             {
-                int[,] bestPos = new int[1, 2];
 
-                bestPos[0, 0] = Enemy_Y;
-                bestPos[0, 1] = Enemy_X + dir;
-                movableList.Add(bestPos);
+                bestPos3[0, 0] = this.Enemy_Y;
+                bestPos3[0, 1] = this.Enemy_X + dir;
+                movableList.Add(bestPos3);
 
             }
-            else if (myMap[Enemy_Y, Enemy_X - dir] == "□")
+            else if (myMap[Enemy_Y, this.Enemy_X - dir] == "□")
             {
-                int[,] bestPos = new int[1, 2];
 
-                bestPos[0, 0] = Enemy_Y;
-                bestPos[0, 1] = Enemy_X - dir;
-                movableList.Add(bestPos);
+                bestPos4[0, 0] = this.Enemy_Y;
+                bestPos4[0, 1] = this.Enemy_X - dir;
+                movableList.Add(bestPos4);
 
             }
 
             //// movableList 수 체크
-            //for(int i = 0; i < movableList.Count;i++)
+            //for (int i = 0; i < movableList.Count; i++)
             //{
-            //    Console.WriteLine("{0}", movableList.Count);
+            //    Console.WriteLine("{0}{1}", movableList[i][0,0], movableList[i][0, 1]);
 
             //}
 
@@ -229,42 +234,46 @@ namespace _20230621_practice
             {
                 int tempNum = player_PosSum;
                 tempNum = player_PosSum - (movableList[i][0, 0] + movableList[i][0, 1]);
+
+                // ???
                 BestPos.Add(Math.Abs(tempNum));
-
-
             }
 
-            // BestPos 값 체크
-            //for(int i = 0; i < BestPos.Count;i++)
+            //BestPos 값 체크
+            //for (int i = 0; i < BestPos.Count; i++)
             //{
             //    Console.WriteLine("{0}", BestPos[i]);
 
             //}
-            int maxNum = 0;
+
+
+            int minNum = 1000;
+
             for (int i = 0; i < BestPos.Count; i++)
             {
-                if (BestPos[i] > maxNum)
+                if (BestPos[i] < minNum)
                 {
-                    maxNum = BestPos[i];
+                    Console.WriteLine("{0}", BestPos[i]);
+                    minNum = BestPos[i];
                 }
             }
 
-            int maxIndex = 0;
+            int minIndex = 0;
 
-            for(int i = 0;i < BestPos.Count; i++)
+            for(int i = 0; i < BestPos.Count; i++)
             {
-                if (BestPos[i] == maxNum)
+                if (BestPos[i] == minNum)
                 {
-                    maxIndex = i;
+                    minIndex = i;
                     break;
                 }
             }
 
             //int bestIndex = BestPos[BestPos.Count - 1];
             
-            Console.WriteLine("{0}", maxIndex);
+            //Console.WriteLine("{0}", maxIndex);
             
-            return movableList[maxIndex];
+            return movableList[minIndex];
             
         }
 
