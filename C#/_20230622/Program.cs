@@ -10,8 +10,8 @@ namespace _20230622
     {
         static void Main(string[] args)
         {
-
           
+
         }
 
 

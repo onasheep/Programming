@@ -18,7 +18,7 @@ namespace _20230622_practice
         public void Init(int bushY_, int bushX_)
         {
             this.Tile = "∧";
-            this.MaxPer = 36;
+            this.MaxPer = 20;
             this.BushY = bushY_;
             this.BushX = bushX_;
         }

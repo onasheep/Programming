@@ -17,23 +17,23 @@ namespace _20230622_practice
 
         public string[,] Dialog {get; private set;}
 
-        public int DialogIndex { get; private set; }
+        public int DialogIndex { get; set; }
 
         public string QuestName { get; private set; }
         public void Init()
         {
-            this.NpcY = 2;
-            this.NpcX = 16;
+            this.NpcY = 3;
+            this.NpcX = 13;
             this.NpcMark = "♥";
-            this.NpcQuestNum = 5;
+            this.NpcQuestNum = 2;
             // 대화내용 배열
             Dialog = new string[2, 2]; 
 
             // 대화 내용
-            this.Dialog[0, 0] = "수풀에 들어가서 토끼를 5 마리 잡아주세요.";
+            this.Dialog[0, 0] = "수풀에 들어가서 토끼를 2 마리 잡아주세요.";
             this.Dialog[0, 1] = "대화를 종료하려면 아무키나 누르세요.";
             this.Dialog[1, 0] = "토끼를 다 잡아 오셨군요.";
-            this.Dialog[1, 1] = "이제 가세요.";
+            this.Dialog[1, 1] = "퀘스트를 클리어 하셨습니다.";
 
             this.QuestName = "토끼 잡기";
             this.DialogIndex = 0;
@@ -50,7 +50,6 @@ namespace _20230622_practice
             Console.Write(Dialog[0, 1]);
             Console.ReadKey();
             Console.Clear();
-            DialogIndex += 1;
 
 
         }
@@ -62,12 +61,10 @@ namespace _20230622_practice
             Console.SetCursorPosition(25, 5);
 
             Console.WriteLine(Dialog[1, 1]);
-            Console.SetCursorPosition(25, 5);
-
-            Console.WriteLine("퀘스트를 클리어 하셨습니다.");
 
             Console.ReadKey();
             Console.Clear();
+
         }
     }
 }

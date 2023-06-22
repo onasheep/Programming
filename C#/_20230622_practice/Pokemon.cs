@@ -4,6 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Threading;
+using System.Security.Cryptography;
 
 namespace _20230622_practice
 {
@@ -12,7 +13,7 @@ namespace _20230622_practice
         // 맵
         string[,] myMap;
         const int map_Y = 10;
-        const int map_X = 30;
+        const int map_X = 20;
 
         // 플레이어 좌표
         int player_Y = default;
@@ -58,9 +59,9 @@ namespace _20230622_practice
             // 맵에 넣은 부쉬를 리스트에 넣기
             bushTileList = new List<BushTile>();
             
-            for (int y = 3; y < 7; y++)
+            for (int y = map_Y / 3; y < map_Y / 2; y++)
             {
-                for (int x = 20; x < 25; x++)
+                for (int x = map_X / 3; x < map_X / 2; x++)
                 {
                     bushTile = new BushTile();
                     bushTile.Init(y, x);
@@ -131,36 +132,32 @@ namespace _20230622_practice
 
         public void DrawQuestLog()
         {
-            Console.SetCursorPosition(64, 1);
-            Console.WriteLine("┌────────────────────────┐");
-            Console.SetCursorPosition(64, 2);
-            Console.WriteLine("│       퀘스트 목록      │");
-            Console.SetCursorPosition(64, 3);
-            Console.WriteLine("│                        │");
-            Console.SetCursorPosition(64, 4);
-            Console.WriteLine("│  1. {0}   {1} / {2}  │",myNpc.QuestName,questCount,questMaxCount);
-            Console.SetCursorPosition(64, 5);
-            Console.WriteLine("│                        │");
-            Console.SetCursorPosition(64, 6);            
-            Console.WriteLine("│                        │");
-            Console.SetCursorPosition(64, 7);
-            Console.WriteLine("│                        │");
-            Console.SetCursorPosition(64, 8);
-            Console.WriteLine("│                        │");
-            Console.SetCursorPosition(64, 9);
-            Console.WriteLine("│                        │");
-            Console.SetCursorPosition(64, 10);
-            Console.WriteLine("│                        │");
-            Console.SetCursorPosition(64, 11);
-            Console.WriteLine("│                        │");
-            Console.SetCursorPosition(64, 12);
-            Console.WriteLine("│                        │");
-            Console.SetCursorPosition(64, 13);
-            Console.WriteLine("│                        │");
-            Console.SetCursorPosition(64, 14);
-            Console.WriteLine("│                        │");
-            Console.SetCursorPosition(64, 15);
-            Console.WriteLine("└────────────────────────┘");
+            Console.SetCursorPosition(40, 1);
+            Console.WriteLine("┌──────────────────────┐");
+            Console.SetCursorPosition(40, 2);
+            Console.WriteLine("│       퀘스트 목록    │");
+            Console.SetCursorPosition(40, 3);
+            Console.WriteLine("│                      │");
+            Console.SetCursorPosition(40, 4);
+            Console.WriteLine("│  1. {0}   {1} / {2}│",myNpc.QuestName,questCount,questMaxCount);
+            Console.SetCursorPosition(40, 5);
+            Console.WriteLine("│                      │");
+            Console.SetCursorPosition(40, 6);            
+            Console.WriteLine("│                      │");
+            Console.SetCursorPosition(40, 7);
+            Console.WriteLine("│                      │");
+            Console.SetCursorPosition(40, 8);
+            Console.WriteLine("│                      │");
+            Console.SetCursorPosition(40, 9);
+            Console.WriteLine("│                      │");
+            Console.SetCursorPosition(40, 10);
+            Console.WriteLine("│                      │");
+            Console.SetCursorPosition(40, 11);
+            Console.WriteLine("│                      │");      
+            Console.SetCursorPosition(40, 12);
+            Console.WriteLine("│                      │");
+            Console.SetCursorPosition(40, 13);
+            Console.WriteLine("└──────────────────────┘");
 
         }       // DrawQuestLog()
         public void Play()
@@ -198,12 +195,13 @@ namespace _20230622_practice
                 if(player_Y == bushTileList[i].BushY && player_X == bushTileList[i].BushX)
                 {
                     isBush = true;
-                    if (bushTile.Check_Encount() < 20)
+                    if (bushTile.Check_Encount() < bushTileList[i].MaxPer)
                     {
                         monsterBattle.Play();
-                        if(monsterBattle.IsPlayerWin)
+                        if(monsterBattle.IsPlayerWin && !isFirstQuest)
                         {
                             questCount += 1;
+                      
                         }
 
                     }
@@ -224,23 +222,20 @@ namespace _20230622_practice
                     isFirstQuest = false;
                     isQuestLog = true;
                 }
-                if (questCount >= questMaxCount && myNpc.DialogIndex > 1)
+                if (questCount >= questMaxCount && myNpc.DialogIndex >= 1)
                 {
                     Console.Clear();
-                    Console.SetCursorPosition(0, 0);
                     myNpc.PrintDiaglog2();
-
                     Thread.Sleep(1000);
-                    return;
 
                 }
                 else if (questCount < questMaxCount)
                 {
                     isQuestLog = false;
                     Console.Clear();
-                    Console.SetCursorPosition(0, 0);
                     myNpc.PrintDialog1();
                     isQuestLog = true;
+                    myNpc.DialogIndex += 1;
 
                 }
 

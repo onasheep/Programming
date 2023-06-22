@@ -34,11 +34,11 @@ namespace _20230622_practice
             monsterHp = 30;
             monsterAtk = 5;
             monsterHeal = 20;
-            monsterCrit = 20;
+            monsterCrit = 10;
 
             playerName = "플레이어";
             playerHp = 100;
-            playerAtk = 10;
+            playerAtk = 15;
             playerHeal = 0;
             playerCrit = 2;
 
@@ -139,18 +139,18 @@ namespace _20230622_practice
                         Console.WriteLine("{0}가 공격했습니다. {1}에게 {2}의 데미지를 입혔습니다.", playerName,monsterName, playerAtk * playerCrit);
                     }
                     Console.WriteLine("===================================================================");
-                    Thread.Sleep(2000);
+                    Thread.Sleep(1100);
                     break;
                 // 몬스터 턴
                 case 2:
                 case 3:
                     int monsterChance = rand.Next(1, 11);
-                    if (monsterChance > 4)
+                    if (monsterChance > 3)
                     {
                         playerHp -= monsterAtk;
                         Console.WriteLine("{0}가 공격했습니다. {1}에게 {2}의 데미지를 입혔습니다.", monsterName, playerName, monsterAtk);
                     }
-                    else if(monsterChance > 2 && monsterChance <= 4)
+                    else if(monsterChance > 2 && monsterChance <= 3)
                     {
                         monsterHp += monsterHeal;
                         if (monsterHp >= monsterMaxHp)
@@ -169,7 +169,7 @@ namespace _20230622_practice
 
                     }
                     Console.WriteLine("===================================================================");
-                    Thread.Sleep(2000);
+                    Thread.Sleep(1100);
                     break;
             }
 
